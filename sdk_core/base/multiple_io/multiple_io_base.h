@@ -42,8 +42,8 @@ typedef std::chrono::steady_clock::time_point TimePoint;
 typedef int FdEvent;
 
 typedef struct pollFd {
-  int fd = 0;                                         /* File descriptor. */
-  FdEvent event = 0;                                  /* Read | Write Event to listen. */
+  int fd = 0;                                     /* File descriptor. */
+  FdEvent event = 0;                              /* Read | Write Event to listen. */
   std::function<void(FdEvent)> event_callback;    /* Read or Write Event Callback. */
   std::function<void(TimePoint)> timer_callback;  /* Timer Event Callback. */
   std::function<void()> wake_callback;            /* WakeUp Event Callback. */

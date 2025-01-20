@@ -25,7 +25,7 @@ void DebugPointCloudManager::AddDevice(const uint32_t handle, const DetectionDat
                                                 detection_data->lidar_ip[1],
                                                 detection_data->lidar_ip[2],
                                                 detection_data->lidar_ip[3]);
-  LidarDeviceInfo deviceInfo;
+    LidarDeviceInfo deviceInfo;
     deviceInfo.sn = detection_data->sn;
     deviceInfo.dev_type = detection_data->dev_type;
     deviceInfo.lidar_ip = ip;
@@ -63,7 +63,6 @@ bool DebugPointCloudManager::SetStorePath(std::string path) {
   path_ = path;
   return true;
 }
-
 
 } // namespace lidar
 } // namespace livox

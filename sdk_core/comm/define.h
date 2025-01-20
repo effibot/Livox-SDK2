@@ -22,8 +22,6 @@
 // SOFTWARE.
 //
 
-##ifndef LIVOX_DEFINE_H_
-##define LIVOX_DEFINE_H_
 #pragma once
 
 #include <stdio.h>
@@ -32,7 +30,7 @@
 #include <functional>
 #include <vector>
 #include <atomic>
-#include <cstdint>
+
 #include "livox_lidar_def.h"
 
 namespace livox {
@@ -55,7 +53,7 @@ typedef struct livoxLidarNetInfo {
   uint16_t log_data_port = 0;
 } LivoxLidarNetInfo;
 
-typedef struct HostNetInfo {
+typedef struct hostNetInfo {
   std::string host_ip;
   std::string multicast_ip;
 
@@ -66,7 +64,7 @@ typedef struct HostNetInfo {
   uint16_t log_data_port = 0;
 } HostNetInfo;
 
-typedef struct leneralCfgInfo {
+typedef struct generalCfgInfo {
   std::vector<uint16_t> cmd_key_set;
 } GeneralCfgInfo; 
 
@@ -77,14 +75,14 @@ typedef struct livoxLidarCfg {
   GeneralCfgInfo general_cfg_info;
 } LivoxLidarCfg;
 
-typedef struct livoxLidarLoggerCfg{
+typedef struct livoxLidarLoggerCfg {
   bool lidar_log_enable = false;
   uint64_t lidar_log_cache_size = 0;
   std::string lidar_log_path;
 } LivoxLidarLoggerCfg;
 
 typedef struct livoxLidarSdkFrameworkCfg {
-  bool master_sdk = true;
+  bool master_sdk;
 } LivoxLidarSdkFrameworkCfg;
 
 typedef enum {
@@ -130,7 +128,7 @@ typedef enum {
   kLidarSend = 1,
 } SendType;
 
-typedef struct detectionData{
+typedef struct detectionData {
   uint8_t ret_code;
   uint8_t dev_type;
   char sn[16];
@@ -138,7 +136,7 @@ typedef struct detectionData{
   uint16_t cmd_port;
 } DetectionData;
 
-typedef struct viewDevice{
+typedef struct viewDevice {
   uint32_t handle = 0;
   uint16_t cmd_port = 0;
   uint8_t dev_type = 0;
@@ -147,7 +145,7 @@ typedef struct viewDevice{
 } ViewDevice;
 
 
-typedef struct viewLidarIpInfo{
+typedef struct viewLidarIpInfo {
   uint32_t handle = 0;
   uint8_t dev_type = 0;
   std::string host_ip;
@@ -161,13 +159,13 @@ typedef struct viewLidarIpInfo{
 } ViewLidarIpInfo;
 
 
-typedef struct livoxLidarIpInfoValue{
+typedef struct livoxLidarIpInfoValue {
   uint8_t lidar_ipaddr[4];
   uint8_t lidar_subnet_mask[4];
   uint8_t lidar_gateway[4];
 } LivoxLidarIpInfoValue;
 
-typedef struct hostIpInfoValue{
+typedef struct hostIpInfoValue {
   uint8_t host_ip[4];
   uint16_t host_port;
   uint16_t lidar_port;
@@ -233,9 +231,9 @@ typedef struct enableDeviceLoggerRequest {
 
 typedef struct lidarDeviceInfo {
   std::string   sn;
-  std::uint8_t  dev_type;
+  std::uint8_t  dev_type = 0;
   std::string   lidar_ip;
-  std::uint16_t cmd_port;
+  std::uint16_t cmd_port = 0;
 } LidarDeviceInfo;
 
 typedef struct deviceLoggerFilePushRequest {
@@ -323,7 +321,7 @@ typedef struct livoxLidarRequestFirmwareInfoResponse {
   uint8_t info[1];  /**< Firmware info string, include '\0'. */
 } LivoxLidarRequestFirmwareInfoResponse;
 
-typedef struct livoxLidarDebugPointCloudFileHeader{
+typedef struct livoxLidarDebugPointCloudFileHeader {
   uint8_t file_ver;   /**< file format version. */
   uint8_t dev_type;   /**< the device type of the firmware. */
   uint8_t data_type;  /**< type of data. */
@@ -367,4 +365,3 @@ typedef void(*LivoxLidarRequestFirmwareInfoCallback)(livox_status status,
 } // namespace lidar
 } // namespace livox
 
-# endif // DEFINE_H_

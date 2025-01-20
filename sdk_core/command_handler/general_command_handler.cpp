@@ -179,7 +179,7 @@ void GeneralCommandHandler::Handler(uint32_t handle, uint16_t lidar_port, uint8_
 }
 
 void GeneralCommandHandler::Handler(const uint8_t dev_type, const uint32_t handle, const uint16_t lidar_port,
-    	uint8_t* buf, uint32_t buf_size) {
+	uint8_t* buf, uint32_t buf_size) {
 	if (buf == nullptr || buf_size == 0) {
 		return;
 	}

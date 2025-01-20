@@ -74,7 +74,8 @@ uint32_t REV32( uint32_t value)
 
 /** Constructor
  */
-FastCRC7::FastCRC7(){
+FastCRC7::FastCRC7()
+{
 	seed = {};
 }
 
@@ -106,7 +107,8 @@ uint8_t FastCRC7::crc7(const uint8_t *data, const size_t datalen)
 
 /** Constructor
  */
-FastCRC8::FastCRC8(){
+FastCRC8::FastCRC8()
+{
 	seed = {};
 }
 
@@ -160,7 +162,8 @@ uint8_t FastCRC8::maxim(const uint8_t *data, const size_t datalen)
 // ================= 16-BIT CRC ===================
 /** Constructor
  */
-FastCRC16::FastCRC16(){
+FastCRC16::FastCRC16()
+{
 	seed = {};
 }
 
@@ -422,7 +425,8 @@ uint16_t FastCRC16::x25(const uint8_t *data, const size_t datalen)
 // ================= 32-BIT CRC ===================
 /** Constructor
  */
-FastCRC32::FastCRC32(){
+FastCRC32::FastCRC32()
+{
 	seed = {};
 }
 
